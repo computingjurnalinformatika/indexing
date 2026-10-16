@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indexing - Computing Jurnal Informatika</title>
+    <style>
+        /* Pengaturan Dasar */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Bagian Header dengan animasi Gradient Hijau Cerah */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            /* Warna disesuaikan dengan referensi hijau cerah */
+            background: linear-gradient(-45deg, #28996b, #38b680, #28996b);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        /* Kontainer untuk daftar Indexing */
+        .indexing-container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 35px;
+        }
+
+        /* Desain Kartu Logo */
+        .indexing-card {
+            position: relative;
+            background: white;
+            border-radius: 16px;
+            width: 250px;
+            height: 130px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            border: 1px solid #e1e1e1;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            cursor: pointer;
+        }
+
+        /* Efek Hover pada Kartu (Warna Hijau Cerah) */
+        .indexing-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            /* Bayangan bercahaya warna hijau cerah */
+            box-shadow: 0 15px 30px rgba(56, 182, 128, 0.25);
+            border-color: #38b680;
+        }
+
+        /* Efek saat Kartu di-klik */
+        .indexing-card:active {
+            transform: translateY(-2px) scale(0.98);
+            box-shadow: 0 5px 15px rgba(56, 182, 128, 0.2);
+        }
+
+        /* Link membungkus seluruh area kartu */
+        .indexing-card a {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            position: relative;
+        }
+
+        /* Pengaturan gambar logo */
+        .indexing-card img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            transition: transform 0.4s ease, filter 0.4s ease;
+            filter: grayscale(30%) opacity(0.8);
+        }
+
+        /* Efek pada logo saat kartu di-hover */
+        .indexing-card:hover img {
+            transform: scale(1.1);
+            filter: grayscale(0%) opacity(1);
+        }
+
+        /* Tooltip Kustom (Muncul saat Hover) */
+        .indexing-card::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: -40px;
+            background-color: #38b680; /* Warna tooltip hijau cerah */
+            color: #fff;
+            font-size: 14px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        /* Segitiga Tooltip */
+        .indexing-card::before {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            border-width: 6px;
+            border-style: solid;
+            border-color: transparent transparent #38b680 transparent;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Menampilkan Tooltip saat Hover */
+        .indexing-card:hover::after,
+        .indexing-card:hover::before {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Computing Jurnal Informatika</h1>
+    </div>
+
+    <div class="indexing-container">
+        <!-- 1. Google Scholar -->
+        <div class="indexing-card" data-tooltip="Google Scholar">
+            <a href="https://scholar.google.com/citations?user=4AEIEr8AAAAJ" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg" alt="Google Scholar">
+            </a>
+        </div>
+
+        <!-- 2. Garuda -->
+        <div class="indexing-card" data-tooltip="Garuda (Garba Rujukan Digital)">
+            <a href="https://garuda.kemdiktisaintek.go.id/journal/view/28843" target="_blank">
+                <img src="https://garuda.kemdiktisaintek.go.id/assets/img/garuda1.png" alt="Garuda">
+            </a>
+        </div>
+
+        <!-- 3. Crossref -->
+        <div class="indexing-card" data-tooltip="Crossref">
+            <a href="https://search.crossref.org/search/works?q=computing+jurnal+informatika&from_ui=yes" target="_blank">
+                <img src="https://assets.crossref.org/logo/crossref-logo-landscape-200.png" alt="Crossref">
+            </a>
+        </div>
+
+        <!-- 4. Dimensions -->
+        <div class="indexing-card" data-tooltip="Dimensions">
+            <a href="https://app.dimensions.ai/discover/publication?search_mode=content&and_facet_source_title=jour.1486576" target="_blank">
+                <img src="https://raw.githubusercontent.com/computingjurnalinformatika/indexing/main/dimensions-logo2.png" alt="Dimensions">
+            </a>
+        </div>
+
+        <!-- 5. Index Copernicus -->
+        <div class="indexing-card" data-tooltip="Index Copernicus International">
+            <a href="https://journals.indexcopernicus.com/search/details?id=137410&lang=en" target="_blank">
+                <img src="https://raw.githubusercontent.com/computingjurnalinformatika/indexing/main/copernicus.png" alt="Index Copernicus">
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
